@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20221220124800_create_table_token_blacklist
+      author: mwitczak
+      changes:
+        - createTable:
+            tableName: token_blacklist
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: token_blacklist_PK
+                  name: token
+                  type: varchar(500)
+              - column:
+                  name: expire_date
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false

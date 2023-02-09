@@ -1,0 +1,13 @@
+package pl.tt.auth.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+public class UsernamePasswordDTO {
+    private String username;
+    private String password;
+}

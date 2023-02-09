@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: auth
+  datasource:
+    url: jdbc:postgresql://localhost:5433/ts_auth_db
+    username: postgres
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: none
+        show-sql: true
+  liquibase:
+    change-log: classpath:db/change-log.yml
+
+jwt:
+  accessTokenValidityTime: 600000
+  accessTokenSecret: 'ACCESS_TOKEN_SECRET_TO_CHANGE'
+  refreshTokenValidityTime: 600000
+  refreshTokenSecret: 'REFRESH_TOKEN_SECRET_TO_CHANGE'

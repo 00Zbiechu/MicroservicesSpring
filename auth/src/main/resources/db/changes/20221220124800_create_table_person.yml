@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20221220124800_create_table_person
+      author: mwitczak
+      changes:
+        - createTable:
+            tableName: person
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: USER_PK
+                  name: id
+                  type: NUMBER(19)
+              - column:
+                  name: username
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: active
+                  type: NUMBER(1)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 20221220124800_create_person_seq
+      author: mwitczak
+      changes:
+        - createSequence:
+            incementBy: 1
+            sequenceName: person_seq
+            startValue: 1
+            minValue: 1
+            maxValue: 9223372036854775807

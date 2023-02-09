@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20221220122000_init_tag
+      author: fsobanski
+      changes:
+        - tagDatabase:
+            tag: init
