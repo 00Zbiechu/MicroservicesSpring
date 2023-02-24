@@ -19,9 +19,9 @@ public class UserActiveService {
 
         PersonEntity personEntity = PersonEntity.builder()
                 .active(1)
-                .email("asdf@email.com")
-                .password(passwordEncoder.encode("zaq1@WSX"))
-                .username("haslo_okon")
+                .email("zbiechu@gmail.com")
+                .password(passwordEncoder.encode("1234"))
+                .username("Zbiechu")
                 .build();
         userRepository.save(personEntity);
     }

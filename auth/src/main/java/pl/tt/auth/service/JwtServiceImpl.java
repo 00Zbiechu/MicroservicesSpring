@@ -100,7 +100,7 @@ public class JwtServiceImpl implements JwtService {
         String acessTokenUserName = getUsernameFromToken(tokenDTO.getAccessToken(), jwtProperties.getAccessTokenSecret());
         String refreshTokenUserName = getUsernameFromToken(tokenDTO.getRefreshToken(), jwtProperties.getRefreshTokenSecret());
         if (!StringUtils.equals(acessTokenUserName, refreshTokenUserName)) {
-            throw new TokenUserMismatchException(String.format("token coś nie pasuje"));
+            throw new TokenUserMismatchException(String.format("token nie pasuje"));
         }
         PersonEntity userEntity = userService.findByUsername(acessTokenUserName);
         return userEntity;
