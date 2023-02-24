@@ -8,11 +8,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @RequiredArgsConstructor
 public class FilterRegistrationConfig {
-    //TODO cos nie dziala
-    private final AuthenticationFilter authenticationFilter;
 
-    @Bean
-    public FilterRegistrationBean filterRegistrationBean(){
-        return new FilterRegistrationBean(authenticationFilter);
-    }
+
+//    @Bean
+//    public FilterRegistrationBean<AuthenticationFilter> loginFilter(){
+//
+//        FilterRegistrationBean<AuthenticationFilter> filter = new FilterRegistrationBean<>();
+//
+//        filter.setFilter(new AuthenticationFilter());
+//
+//        return filter;
+//
+//    }
 }

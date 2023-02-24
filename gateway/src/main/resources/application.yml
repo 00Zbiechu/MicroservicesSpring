@@ -9,3 +9,16 @@ eureka:
 spring:
   application:
     name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+      routes:
+       - id: demo
+         uri: lb://demo
+         predicates:
+           - Path=/demo/**
+         filters:
+           - StripPrefix=1
